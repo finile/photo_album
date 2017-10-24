@@ -1,7 +1,43 @@
-<%= @photo.title %>
-<%= @photo.date %>
-<%= image_tag @photo.file_location.url, size:"1400x1400", class: "img-thumbnail" %>
-<%= simple_format(@photo.description) %>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container"> 
+      <a class="navbar-brand" href="#">My Photo_Album</a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"><%= link_to 'Back to index', photos_path %>
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<p><%= link_to 'Back to index', photos_path %></p>
+
+  <!-- Page Content -->
+  <div class="container">
+
+  <!-- Page Heading -->
+    <h1 class="my-4"><%= @photo.title %>
+      <small><%= @photo.date %></small>
+    </h1>
+    <%= image_tag @photo.file_location.url, size:"1400x1400", class: "img-thumbnail" %>
+    <%= simple_format(@photo.description) %>    
+  </div>
+  
+  <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+  </footer>
+</body>
+
+
+
+
+
+
+
+
 
